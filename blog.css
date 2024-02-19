@@ -1,0 +1,122 @@
+:root{
+    /* colors */
+    --clr-primary: hsl(47, 88%, 63%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-grey: hsl(0, 0%, 50%);
+    --clr-black: hsl(0, 0%, 7%);
+
+    /* fonts */
+    --ff-figtree: "Figtree", sans-serif;
+}
+
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img,
+svg{
+    display: block;
+    max-width: 100%;
+}
+
+button{
+    width: max-content;
+}
+
+body{
+    padding: 1em;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    position: relative;
+    background-color: var(--clr-primary);
+    font-family: var(--ff-figtree);
+}
+svg{
+    border-radius: .8em ;
+}
+
+.card{
+    user-select: none;
+    background-color: var(--clr-white);
+    position: relative;
+    border-radius: .8em;
+    max-width: 20rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: .03rem solid #111;
+    gap: .8em;
+    padding: 1.2em;
+    box-shadow: 6px 6px 1px 0px #111 ;
+    transition: box-shadow .1s ease-in-out;
+
+    &:is(:hover, :focus){
+        cursor: pointer;
+        border: .15em solid #1119;
+        box-shadow: 8px 8px 1px 1px #111;
+    }
+
+    & .btn{
+        font-weight: 600;
+        letter-spacing: .015rem;
+        font-size: .95rem;
+        padding: .5em;
+        border: none;
+        border-radius: .2em;
+        background-color: var(--clr-primary);
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.date{
+    font-weight: 400;
+}
+
+.title{
+    font-weight: 900;
+    font-size: clamp(1.06em, 3vw, 1.34em);
+    word-wrap: nowrap;
+    transition: color .1s ease-in-out;
+}
+
+.title:hover{
+    color:  var(--clr-primary);
+}
+
+.text{
+    font-size: clamp(.75em, 1.5vw, .85em);
+    color: var(--clr-grey);
+}
+
+figure{
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+figcaption{
+    font-weight: 800;
+}
+
+footer {
+    background-color: var(--clr-white);
+    padding: .5em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 12px;
+    text-align: center;
+    width: 100vw;
+}
+
+footer a {
+    color: hsl(228, 45%, 44%);
+}
